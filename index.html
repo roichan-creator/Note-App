@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Note Keep</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
+  <style>
+    .container {
+      width: 360pt;
+      /* background-color: navy; */
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 80px;
+      text-align: center;
+    }
+    .container > h1 {
+      font-size: 24pt;
+    }
+    .container > p {
+      font-size: 13pt;
+      width: 269px;
+      margin: auto;
+      color: #4E8B97;
+      margin-bottom: 50px;
+    }
+    .container > p > a {
+      color: #19B9DA;
+      font-weight: bold;
+      font-size: 13pt;
+    }
+    .container > input {
+      width: 100%;
+      height: 40px;
+      margin-top: 20px;
+      margin-bottom: 15px;
+      background-color: #19C3E6;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 14pt;
+    }
+    .container > div > label > input {
+      border-radius: 8px;
+    }
+    .logo {
+      font-size: 30pt;
+      color: #19C3E6;
+      background-color: #E1F5F9;
+      border-radius: 8px;
+      padding: 10px;
+      display: inline-block;
+    }
+    .login {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+    }
+    .login > div > label {
+      font-weight: bold;
+    }
+    .login > input {
+      /* width: 100%;  */
+      height: 30px;
+      border-radius: 8px;
+      margin-top: 10px;
+      margin-bottom: 40px;
+      border: 1px solid #c4c4c4;
+    }
+    .login > div > a {
+      margin-left: 269px;
+      color: #19C3E6;
+      font-weight: 600;
+    }
+    body {
+      font-family: "Plus Jakarta Sans", sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <i class="hgi hgi-stroke hgi-file-edit logo" ></i>
+    <h1>Note Keep</h1>
+    <p>Enter your email and password to access your notes</p>
+    <div class="login">
+      <div>
+        <label for="email">Email Address</label>
+      </div>
+      <input type="email" name="email" id="email" placeholder="name@example.com">
+    </div>
+    <div class="login">
+      <div>
+      <label for="password">Password</label>
+      <a href="/forgotpassword">Forgot Password</a>
+      </div>
+      <input type="password" name="password" id="password" placeholder="enter password">
+    </div>
+    <input type="submit" value="Log In">
+    <p>Don't have an account? <a href="signup">Sign up</a></p>
+    
+  </div>
+</body>
+</html>
