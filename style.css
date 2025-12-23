@@ -1,4 +1,73 @@
-/* body {
+.container {
+  width: 390pt;
+  /* background-color: navy; */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+  text-align: center;
+}
+.container > header > h1 {
+  font-size: 24pt;
+}
+.container > header > p {
+  font-size: 13pt;
+  width: 269px;
+  margin: auto;
+  color: #4e8b97;
+  margin-bottom: 50px;
+}
+.container > footer > p > a {
+  color: #19b9da;
+  font-weight: bold;
+  font-size: 13pt;
+}
+.container > input {
+  width: 100%;
+  height: 40px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  background-color: #19c3e6;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 14pt;
+  border-radius: 8px;
+}
+.container > a {
+  text-align: left;
+}
+.container .container > div > label > input {
+  border-radius: 8px;
+}
+.logo {
+  font-size: 30pt;
+  color: #19c3e6;
+  background-color: #e1f5f9;
+  border-radius: 8px;
+  padding: 10px;
+  display: inline-block;
+}
+.login {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+.login > div > label {
+  font-weight: bold;
+}
+.login > input {
+  /* width: 100%;  */
+  height: 30px;
+  border-radius: 8px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  border: 1px solid #c4c4c4;
+}
+.login > label > a {
+  margin-left: 309px;
+  color: #19c3e6;
+  font-weight: 600;
+}
+body {
   font-family: "Plus Jakarta Sans", sans-serif;
-} */
-
+}

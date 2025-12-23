@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css"
+    />
+    <style>
+      .container {
+        width: 347pt;
+        /* background-color: lightblue; */
+        margin-left: auto;
+        margin-right: auto;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .container > header > div > span {
+        color: #777777;
+        font-size: 14px;
+      }
+      .container > header > div > p {
+        font-size: 18px;
+        font-weight: bold;
+        margin: 0;
+      }
+      .container > span {
+        font-weight: bold;
+        font-size: 18pt;
+      }
+      .container > div > span {
+        font-weight: bold;
+      }
+      .container > div > input {
+        width: 100%;
+        height: 40px;
+        margin-top: 10px;
+        margin-bottom: 55px;
+        background-color: #19c3e6;
+        color: #ffffff;
+        font-weight: bold;
+        font-size: 14pt;
+        border-radius: 8px;
+      }
+      .logo-keluar {
+        font-size: 35pt;
+        border-radius: 8px;
+        padding: 10px;
+        display: inline-block;
+        text-align: right;
+      }
+      .logo-note {
+        font-size: 15pt;
+        border-radius: 8px;
+        padding: 10px;
+        display: inline-block;
+        text-align: right;
+        margin-top: 30px;
+        margin-bottom: 5px;
+        color: #19c3e6;
+      }
+      .logo-edit {
+        font-size: 30pt;
+        border-radius: 8px;
+        padding: 10px;
+        display: inline-block;
+        text-align: right;
+      }
+      .border-title input {
+        width: calc(100% - 5px);
+        height: 50px;
+        border-radius: 8px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #c4c4c4;
+        display: inline-block;
+        font-size: 14px;
+      }
+      .border-note textarea {
+        width: calc(100% - 5px);
+        height: 200px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+        border: 1px solid #c4c4c4;
+        display: inline-block;
+        font-size: 14px;
+        padding-top: 10px;
+      }
+      .box-riwayat {
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid #ffffff;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      .box-riwayat > div > p {
+        margin: 0;
+        font-weight: bold;
+        font-size: 14pt;
+      }
+      .box-riwayat > div > span {
+        color: #4e8b97;
+        font-size: 12px;
+      }
+      .note-content {
+        margin-bottom: 20px;
+        margin: 0;
+        font-size: 14px;
+      }
+      * {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div>
+          <span>DASHBOARD</span>
+          <p>Hi, student@uni.edu</p>
+        </div>
+        <div>
+          <i class="hgi hgi-stroke hgi-logout-square-02 logo-keluar"></i>
+        </div>
+      </header>
+      <div>
+        <i class="hgi hgi-stroke hgi-file-edit logo-note"></i>
+        <span>Create new note</span>
+        <div class="border-title">
+          <input type="text" placeholder="Note Title" />
+        </div>
+        <div class="border-note">
+          <textarea
+            type="text"
+            placeholder="Write your thoughts here..."
+          ></textarea>
+        </div>
+        <input type="submit" value="+Add Note" />
+      </div>
+      <span>Your notes</span>
+      <div>
+        <div class="box-riwayat">
+          <div>
+            <p>Reaks Hooks Study</p>
+            <span>oct24.2025</span>
+          </div>
+          <div class="logo-edit">
+            <i class="hgi hgi-stroke hgi-edit-02"></i>
+            <i class="hgi hgi-stroke hgi-delete-02"></i>
+          </div>
+        </div>
+        <div class="note-content">
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium
+            doloribus in saepe libero mollitia enim quisquam inventore.
+            Recusandae facilis deleniti omnis. Quam voluptatem laboriosam
+            molestiae iure natus earum ut nam.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

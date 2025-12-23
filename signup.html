@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <i class="hgi hgi-stroke hgi-file-edit logo"></i>
+        <h1>Get Started</h1>
+        <p>create a free account to save your notes and acces them anywhere</p>
+      </header>
+      <div class="login">
+        <div>
+          <label for="email">Email Address</label>
+        </div>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="name@example.com"
+        />
+      </div>
+      <div class="login">
+        <div>
+          <label for="password">Password</label>
+        </div>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="enter password"
+        />
+      </div>
+      <div class="login">
+        <div>
+          <label for="confirm-password"> Confirm Password</label>
+        </div>
+        <input
+          type="password"
+          name="confirm-password"
+          id="confirm-password"
+          placeholder="Re-enter password"
+        />
+      </div>
+      <input type="submit" value="Register" onclick="tambahuser()" />
+      <footer>
+        <p>Already a member<a href="login.html">Log in</a></p>
+      </footer>
+    </div>
+
+    <script>
+      // let users = []
+      function tambahuser() {
+        let inEmail = document.getElementById("email");
+        let inPassword = document.getElementById("password");
+        let inConfirm = document.getElementById("confirm-password");
+        if (inPassword.value != inConfirm.value) {
+          alert("Pasword dan confirm tidak sama");
+          return;
+        }
+        console.log(inEmail.value);
+        console.log(inPassword.value);
+        console.log(inConfirm.value);
+        let newusers = {
+          email: inEmail.value,
+          password: inPassword.value,
+        };
+        saveTostorage(newusers);
+        // users.push(newusers)
+        alert("Registrasi Berhasil, Silahkan Masuk ke halaman utama");
+        window.location.href = "./login.html";
+      }
+      function saveTostorage(dataUser) {
+        let stringDataUser = JSON.stringify(dataUser);
+        localStorage.setItem("user", stringDataUser);
+      }
+    </script>
+  </body>
+</html>

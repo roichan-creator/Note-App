@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Note Keep</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <i class="hgi hgi-stroke hgi-file-edit logo"></i>
+        <h1>Note Keep</h1>
+        <p>Enter your email and password to access your notes</p>
+      </header>
+      <div class="login">
+        <label for="email">Email Address</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="name@example.com"
+        />
+      </div>
+      <div class="login">
+        <label for="password"
+          >Password<a href="/forgotpassword">Forgot Password</a></label
+        >
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="enter password"
+        />
+      </div>
+      <input type="submit" value="Log In" onclick="mainlogin()" />
+      <footer>
+        <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+      </footer>
+    </div>
+
+    <script>
+      function mainlogin() {
+        let inregisEmail = document.getElementById("email");
+        let inregisPassword = document.getElementById("password");
+        let usernew = {
+          email: inregisEmail.value,
+          password: inregisPassword.value,
+        };
+        let registerUser = getFromStorage();
+
+        if (
+          usernew.email === registerUser.email &&
+          usernew.password === registerUser.password
+        ) {
+          alert("selamat login berhasil");
+          window.location.href = "./mainpage.html";
+        } else {
+          alert("email atau password salah");
+        }
+      }
+
+      function getFromStorage() {
+        let userInStorage = localStorage.getItem("user");
+        return JSON.parse(userInStorage);
+      }
+    </script>
+  </body>
+</html>
