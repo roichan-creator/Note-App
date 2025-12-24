@@ -97,6 +97,10 @@
         font-size: 14px;
         padding-top: 10px;
       }
+      .main-note {
+        background-color: white;
+        margin-bottom: 20px;
+      }
       .box-riwayat {
         display: flex;
         justify-content: space-between;
@@ -138,37 +142,70 @@
         <i class="hgi hgi-stroke hgi-file-edit logo-note"></i>
         <span>Create new note</span>
         <div class="border-title">
-          <input type="text" placeholder="Note Title" />
+          <input type="text" placeholder="Note Title" id="title" />
         </div>
         <div class="border-note">
           <textarea
             type="text"
             placeholder="Write your thoughts here..."
+            id="konten"
           ></textarea>
         </div>
-        <input type="submit" value="+Add Note" />
+        <input type="submit" value="+Add Note" onclick="tambahcatatan()" />
       </div>
       <span>Your notes</span>
-      <div>
-        <div class="box-riwayat">
-          <div>
-            <p>Reaks Hooks Study</p>
-            <span>oct24.2025</span>
-          </div>
-          <div class="logo-edit">
-            <i class="hgi hgi-stroke hgi-edit-02"></i>
-            <i class="hgi hgi-stroke hgi-delete-02"></i>
-          </div>
-        </div>
-        <div class="note-content">
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium
-            doloribus in saepe libero mollitia enim quisquam inventore.
-            Recusandae facilis deleniti omnis. Quam voluptatem laboriosam
-            molestiae iure natus earum ut nam.
-          </p>
-        </div>
-      </div>
+      <div id="wadah"></div>
     </div>
+    <script>
+      let daftarCatatan = [];
+
+      let wadah = document.getElementById("wadah");
+      
+      function tambahcatatan() {
+        let inTitle = document.getElementById("title");
+        let inKonten = document.getElementById("konten");
+
+        console.log(inTitle.value);
+        console.log(inKonten.value);
+        let date = new Date();
+        let dd = date.getDate();
+        let mm = date.getMonth() + 1;
+        let yyyy = date.getFullYear();
+        let newDate = dd + "-" + mm + "-" + yyyy;
+        let newcatatan = {
+          judul: inTitle.value,
+          tanggal: newDate,
+          konten: inKonten.value,
+        };
+        daftarCatatan.push(newcatatan);
+        tampilkanCatatan();
+      }
+      function tampilkanCatatan() {
+        wadah.innerHTML = ''
+        for (let i = 0; i < daftarCatatan.length; i++)
+          wadah.innerHTML += `<div class="main-note">
+          <div class="box-riwayat">
+            <div>
+              <p>${daftarCatatan[i].judul}</p>
+              <span>${daftarCatatan[i].tanggal}</span>
+            </div>
+            <div class="logo-edit">
+              <i class="hgi hgi-stroke hgi-edit-02"></i>
+              <i class="hgi hgi-stroke hgi-delete-02" onclick="hapuscatatan(${i})"></i>
+            </div>
+          </div>
+          <div class="note-content">
+            <p>
+              ${daftarCatatan[i].konten}
+            </p>
+          </div>
+        </div>`;
+      }
+      function hapuscatatan(target) {
+        daftarCatatan.splice(target, 1)
+        tampilkanCatatan()
+        alert("berhasil menghapus catatan")
+      }
+    </script>
   </body>
 </html>
